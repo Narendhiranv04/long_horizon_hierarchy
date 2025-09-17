@@ -3,26 +3,47 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Project page for Hierarchical VLM-RL Long Horizon Manipulation." />
-    <title>Hierarchical VLM-RL Long Horizon Manipulation</title>
+    <meta
+      name="description"
+      content="Project page for Hierarchical VLM-RL Long-Horizon Manipulation (Long Horizon Hierarchy)."
+    />
+    <title>Long Horizon Hierarchy</title>
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Styles & Scripts -->
     <link rel="stylesheet" href="assets/style.css" />
     <script defer src="assets/script.js"></script>
   </head>
+
   <body data-theme="dark">
     <header class="site-header" id="top">
       <div class="container site-header__inner">
-        <a class="site-logo" href="#overview">Hierarchical VLM-RL Long Horizon Manipulation</a>
-        <button class="menu-toggle" type="button" data-js="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+        <a class="site-logo logo" href="#overview">Long Horizon Hierarchy</a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          data-js="menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
           <span class="menu-toggle__icon" aria-hidden="true">☰</span>
           <span class="menu-toggle__text">Menu</span>
         </button>
-        <nav id="site-nav" class="site-nav" data-js="site-nav" aria-label="Main navigation">
+
+        <nav
+          id="site-nav"
+          class="site-nav"
+          data-js="site-nav"
+          aria-label="Main navigation"
+        >
           <a href="#overview">Overview</a>
           <a href="#teaser">Teaser</a>
           <a href="#abstract">Abstract</a>
@@ -32,7 +53,14 @@
           <a href="#resources">Resources</a>
           <a href="#bibtex">BibTeX</a>
         </nav>
-        <button class="theme-toggle" type="button" data-js="theme-toggle" aria-label="Switch to light theme">
+
+        <button
+          class="theme-toggle"
+          type="button"
+          data-js="theme-toggle"
+          aria-label="Switch to light theme"
+          title="Switch to light theme"
+        >
           <span class="theme-toggle__icon" aria-hidden="true">☀️</span>
           <span class="theme-toggle__text">Light Mode</span>
         </button>
@@ -40,16 +68,21 @@
     </header>
 
     <main>
+      <!-- ======================= -->
+      <!-- Hero / Overview section -->
+      <!-- ======================= -->
       <section class="hero" id="overview">
         <div class="container hero__inner">
           <div class="hero__content">
-            <p class="hero__eyebrow">Project Overview</p>
-            <h1 class="hero__title">Hierarchical VLM-RL Long Horizon Manipulation</h1>
+            <p class="hero__eyebrow tagline">Project Overview</p>
+            <h1 class="hero__title">Hierarchical VLM-RL Long-Horizon Manipulation</h1>
             <p class="hero__lead">
-              Replace this paragraph with a crisp description of the problem and solution. The layout mirrors the ManipGen page so
-              you can drop in final copy while highlighting long-horizon control built on top of VLM-guided RL policies.
+              Replace this paragraph with a crisp description of the problem and solution. The layout mirrors the
+              ManipGen page so you can drop in final copy while highlighting long-horizon control built on top of
+              VLM-guided RL policies.
             </p>
-            <div class="button-group">
+
+            <div class="button-group hero__cta">
               <a class="button" href="#" target="_blank" rel="noopener">
                 <span class="icon" aria-hidden="true">📄</span>
                 <span>Paper</span>
@@ -67,13 +100,15 @@
                 <span>Summary</span>
               </a>
             </div>
+
             <div class="hero__meta">
-              <p class="hero__authors">Puru Ojha · Narendhiran Vijayakumar</p>
+              <p class="hero__authors"><strong>Authors:</strong> Puru Ojha · Narendhiran Vijayakumar</p>
               <p class="hero__venue">Conference or workshop information goes here.</p>
             </div>
           </div>
-          <div class="hero__media">
-            <div class="video-frame">
+
+          <div class="hero__media hero__visual">
+            <div class="video-frame video-wrapper">
               <iframe
                 src="https://www.youtube.com/embed/videocode"
                 title="Project teaser"
@@ -86,12 +121,15 @@
         </div>
       </section>
 
+      <!-- ============= -->
+      <!-- Teaser section -->
+      <!-- ============= -->
       <section class="teaser" id="teaser">
         <div class="container">
           <h2 class="section-title">Teaser Video</h2>
           <p class="section-subtitle">
-            Highlight the zero-shot capabilities of the hierarchy. Replace the embed below with your long-horizon demonstration
-            reel.
+            Highlight the zero-shot capabilities of the hierarchy. Replace the embed below with your long-horizon
+            demonstration reel.
           </p>
           <div class="video-frame">
             <iframe
@@ -104,13 +142,17 @@
         </div>
       </section>
 
-      <section class="highlights" id="highlights">
+      <!-- ================= -->
+      <!-- Highlights section -->
+      <!-- ================= -->
+      <section class="highlights" id="highlights" aria-label="Project highlights">
         <div class="container">
           <h2 class="section-title">Key Contributions</h2>
           <p class="section-subtitle">
             Summarize the headline findings that mirror the ManipGen structure. Each card below can be swapped for a concise
             bullet or figure.
           </p>
+
           <div class="highlight-grid">
             <article class="highlight-card">
               <h3>Hierarchical VLM-RL</h3>
@@ -128,23 +170,29 @@
         </div>
       </section>
 
+      <!-- =============== -->
+      <!-- Abstract section -->
+      <!-- =============== -->
       <section id="abstract" class="abstract">
         <div class="container">
           <h2 class="section-title">Abstract</h2>
           <div class="content">
             <p>
-              This template mirrors the cadence of the ManipGen project page. Replace the placeholder copy with the official
-              abstract from your paper to explain the motivation and contributions of Hierarchical VLM-RL Long Horizon
-              Manipulation.
+              This template mirrors the cadence of the ManipGen project page. Replace the placeholder copy with the
+              official abstract from your paper to explain the motivation and contributions of Hierarchical VLM-RL
+              Long-Horizon Manipulation.
             </p>
             <p>
-              Use additional paragraphs or line breaks to emphasize sim-to-real performance, robustness to distribution shifts,
-              and any benchmarks that demonstrate strong long-horizon generalization.
+              Use additional paragraphs or line breaks to emphasize sim-to-real performance, robustness to distribution
+              shifts, and any benchmarks that demonstrate strong long-horizon generalization.
             </p>
           </div>
         </div>
       </section>
 
+      <!-- =================== -->
+      <!-- Architecture section -->
+      <!-- =================== -->
       <section id="architecture" class="architecture">
         <div class="container">
           <h2 class="section-title">Architecture</h2>
@@ -152,7 +200,8 @@
             Showcase the hierarchical control stack, perception modules, and policy interfaces that power long-horizon
             execution.
           </p>
-          <div class="architecture__grid">
+
+          <div class="architecture__grid architecture__content">
             <img
               src="assets/architecture-placeholder.svg"
               alt="Placeholder diagram. Replace with your architecture graphic."
@@ -160,8 +209,8 @@
             <div class="architecture__text">
               <h3>How It Works</h3>
               <p>
-                Provide a succinct narrative that walks through the data flow and decision layers. Mention VLM planning, RL
-                skills, and how the system stitches together subgoals to finish multi-stage tasks.
+                Provide a succinct narrative that walks through the data flow and decision layers. Mention VLM planning,
+                RL skills, and how the system stitches together subgoals to finish multi-stage tasks.
               </p>
               <ul>
                 <li>Detail the high-level planner, task graph, or natural language interface.</li>
@@ -173,6 +222,9 @@
         </div>
       </section>
 
+      <!-- ============== -->
+      <!-- Results section -->
+      <!-- ============== -->
       <section id="results" class="results">
         <div class="container">
           <h2 class="section-title">Results</h2>
@@ -180,7 +232,8 @@
             Drop in comparisons, rollouts, and ablations that illustrate why hierarchical VLM-RL excels at long-horizon
             manipulation.
           </p>
-          <div class="results__grid">
+
+          <div class="results__grid result-grid">
             <article class="result-card">
               <div class="media-placeholder">Add simulation rollouts or GIFs.</div>
               <h3>Simulation Benchmarks</h3>
@@ -205,6 +258,9 @@
         </div>
       </section>
 
+      <!-- ========================= -->
+      <!-- Long-Horizon gallery sect. -->
+      <!-- ========================= -->
       <section id="long-horizon" class="long-horizon">
         <div class="container">
           <h2 class="section-title">Long-Horizon Demonstrations</h2>
@@ -212,6 +268,7 @@
             Mirror the ManipGen gallery by showcasing multi-stage rollouts. Swap the placeholders with 8× speed videos to
             illustrate step-by-step progress.
           </p>
+
           <div class="long-horizon__grid">
             <article class="long-horizon-card">
               <div class="media-placeholder">Cabinet organization video</div>
@@ -237,26 +294,33 @@
         </div>
       </section>
 
+      <!-- ================ -->
+      <!-- Resources section -->
+      <!-- ================ -->
       <section id="resources" class="resources">
         <div class="container">
           <h2 class="section-title">Resources</h2>
           <p class="section-subtitle">Link to relevant artifacts once the project is public.</p>
+
           <div class="resource-grid">
             <article class="resource-card">
               <h3>Paper</h3>
               <p>Point to the arXiv or conference version of the paper.</p>
               <a class="button secondary" href="#" target="_blank" rel="noopener">Read the Paper</a>
             </article>
+
             <article class="resource-card">
               <h3>Code</h3>
               <p>Share the repository or release branch with scripts to reproduce experiments.</p>
               <a class="button secondary" href="#" target="_blank" rel="noopener">Browse Code</a>
             </article>
+
             <article class="resource-card">
               <h3>Dataset</h3>
               <p>Reference simulation assets, demonstrations, or generated trajectories.</p>
               <a class="button secondary" href="#" target="_blank" rel="noopener">Get Data</a>
             </article>
+
             <article class="resource-card">
               <h3>Media Kit</h3>
               <p>Provide downloadable figures, logos, or slide decks for talks and coverage.</p>
@@ -266,6 +330,9 @@
         </div>
       </section>
 
+      <!-- ============== -->
+      <!-- BibTeX section  -->
+      <!-- ============== -->
       <section id="bibtex" class="bibtex">
         <div class="container">
           <h2 class="section-title">BibTeX</h2>
@@ -283,8 +350,8 @@
       <div class="container">
         <p>
           Built with a lightweight template inspired by
-          <a href="https://mihdalal.github.io/manipgen/" target="_blank" rel="noopener">ManipGen</a>. Replace this text with
-          acknowledgements or contact details.
+          <a href="https://mihdalal.github.io/manipgen/" target="_blank" rel="noopener">ManipGen</a>.
+          Replace this text with acknowledgements or contact details.
         </p>
         <a class="back-to-top" href="#top">Back to top ↑</a>
       </div>
