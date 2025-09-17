@@ -1,30 +1,13 @@
-const toggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.site-nav');
-const navLinks = document.querySelectorAll('.site-nav a');
-const themeToggle = document.querySelector('.theme-toggle');
-const themeToggleIcon = themeToggle ? themeToggle.querySelector('.theme-toggle__icon') : null;
-const themeToggleLabel = themeToggle ? themeToggle.querySelector('.theme-toggle__label') : null;
 const root = document.body;
+const nav = document.querySelector('[data-js="site-nav"]');
+const navLinks = nav ? Array.from(nav.querySelectorAll('a[href^="#"]')) : [];
+const menuToggle = document.querySelector('[data-js="menu-toggle"]');
+const themeToggle = document.querySelector('[data-js="theme-toggle"]');
+const themeToggleIcon = themeToggle ? themeToggle.querySelector('.theme-toggle__icon') : null;
+const themeToggleText = themeToggle ? themeToggle.querySelector('.theme-toggle__text') : null;
 const THEME_STORAGE_KEY = 'lhh-color-theme';
-const prefersDarkScheme =
+const prefersDark =
   typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-
-if (toggle) {
-  toggle.addEventListener('click', () => {
-    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isExpanded));
-    nav.classList.toggle('is-open');
-  });
-}
-
-navLinks.forEach((link) => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 840) {
-      nav.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }
-  });
-});
 
 const getStoredTheme = () => {
   try {
@@ -38,7 +21,7 @@ const storeTheme = (theme) => {
   try {
     window.localStorage.setItem(THEME_STORAGE_KEY, theme);
   } catch (error) {
-    // Silently ignore storage errors (e.g., private browsing).
+    // Ignore storage errors (e.g., private browsing).
   }
 };
 
@@ -48,14 +31,16 @@ const updateThemeToggle = (currentTheme) => {
   }
 
   const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+  const label = `Switch to ${nextTheme} theme`;
+  themeToggle.setAttribute('aria-label', label);
+  themeToggle.setAttribute('title', label);
 
   if (themeToggleIcon) {
     themeToggleIcon.textContent = nextTheme === 'dark' ? '🌙' : '☀️';
   }
 
-  if (themeToggleLabel) {
-    themeToggleLabel.textContent = `${nextTheme.charAt(0).toUpperCase()}${nextTheme.slice(1)} Mode`;
+  if (themeToggleText) {
+    themeToggleText.textContent = `${nextTheme.charAt(0).toUpperCase()}${nextTheme.slice(1)} Mode`;
   }
 };
 
@@ -74,19 +59,19 @@ const applyTheme = (theme, { persist = true } = {}) => {
 };
 
 const storedTheme = getStoredTheme();
-const systemPrefersDark = prefersDarkScheme ? prefersDarkScheme.matches : true;
+const systemPrefersDark = prefersDark ? prefersDark.matches : true;
 const initialTheme = storedTheme || (systemPrefersDark ? 'dark' : 'light');
 
 applyTheme(initialTheme, { persist: false });
 
 if (themeToggle) {
   themeToggle.addEventListener('click', () => {
-    const activeTheme = root && root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const activeTheme = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
     applyTheme(activeTheme === 'dark' ? 'light' : 'dark');
   });
 }
 
-if (prefersDarkScheme) {
+if (prefersDark) {
   const handleSystemThemeChange = (event) => {
     if (getStoredTheme()) {
       return;
@@ -95,16 +80,73 @@ if (prefersDarkScheme) {
     applyTheme(event.matches ? 'dark' : 'light', { persist: false });
   };
 
-  if (typeof prefersDarkScheme.addEventListener === 'function') {
-    prefersDarkScheme.addEventListener('change', handleSystemThemeChange);
-  } else if (typeof prefersDarkScheme.addListener === 'function') {
-    prefersDarkScheme.addListener(handleSystemThemeChange);
+  if (typeof prefersDark.addEventListener === 'function') {
+    prefersDark.addEventListener('change', handleSystemThemeChange);
+  } else if (typeof prefersDark.addListener === 'function') {
+    prefersDark.addListener(handleSystemThemeChange);
   }
 }
 
-const sections = Array.from(document.querySelectorAll('main section[id]'));
+if (menuToggle && nav) {
+  menuToggle.addEventListener('click', () => {
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+    nav.classList.toggle('is-open');
+  });
 
-if ('IntersectionObserver' in window) {
+  document.addEventListener('click', (event) => {
+    if (!nav.classList.contains('is-open')) {
+      return;
+    }
+
+    const target = event.target;
+    if (target === nav || nav.contains(target) || menuToggle.contains(target)) {
+      return;
+    }
+
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 960 && nav.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+navLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 960 && nav && nav.classList.contains('is-open')) {
+      nav.classList.remove('is-open');
+      if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    }
+  });
+});
+
+const sections = navLinks
+  .map((link) => {
+    const targetId = link.getAttribute('href');
+    if (!targetId || !targetId.startsWith('#')) {
+      return null;
+    }
+
+    return document.querySelector(targetId);
+  })
+  .filter(Boolean);
+
+if ('IntersectionObserver' in window && sections.length) {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -120,7 +162,7 @@ if ('IntersectionObserver' in window) {
         }
       });
     },
-    { threshold: 0.35 }
+    { threshold: 0.4 }
   );
 
   sections.forEach((section) => observer.observe(section));
