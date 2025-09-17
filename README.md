@@ -1,3 +1,4 @@
+````markdown
 # Long Horizon Hierarchy Project Page
 
 This repository hosts the source code for the Long Horizon Hierarchy project website. The layout is inspired by the
@@ -12,15 +13,18 @@ locally, open `docs/index.html` in your browser, or serve the folder with a simp
 ```bash
 cd docs
 python -m http.server 8000
-```
+````
 
-Then navigate to <http://localhost:8000>.
+Then navigate to [http://localhost:8000](http://localhost:8000).
 
 ## Customizing the Page
 
-Update `docs/index.html` to insert your own title, abstract, author list, teaser video, and links. The key sections are
-annotated with placeholder text so you can quickly swap in real content. Styling lives in `docs/assets/style.css`, and a
-small script for the responsive navigation bar is defined in `docs/assets/script.js`.
+Update `docs/index.html` to insert your own title, abstract, author list, teaser video, and links. The template mirrors the
+ManipGen layout with pre-built sections for the hero banner, teaser embed, key contributions, architecture walkthrough,
+results, long-horizon galleries, resources, and BibTeX. Each block contains placeholder copy so you can quickly replace it
+with project-specific content. Styling lives in `docs/assets/style.css`, and the responsive navigation plus theme toggle
+behavior is defined in `docs/assets/script.js`. The key sections are also annotated with placeholder text so you can quickly
+swap in real content.
 
 Replace the placeholder architecture illustration stored at `docs/assets/architecture-placeholder.svg` with your own
 system diagram when you are ready.
@@ -32,3 +36,6 @@ system diagram when you are ready.
 3. The site will be available at `https://<username>.github.io/<repository>/` after the deployment completes.
 
 Feel free to modify the sections or add new ones to match your project narrative.
+
+```
+```
