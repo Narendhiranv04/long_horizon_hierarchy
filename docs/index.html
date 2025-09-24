@@ -1,5 +1,4 @@
-# Create the merged, conflict-free HTML file and save it for download
-html = r"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,7 +7,7 @@ html = r"""<!DOCTYPE html>
       name="description"
       content="Project page for Hierarchical VLM-RL Long-Horizon Manipulation (Long Horizon Hierarchy)."
     />
-    <title>Hierarchical VLM-RL Long-Horizon Manipulation</title>
+    <title>Long Horizon Hierarchy</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,17 +23,6 @@ html = r"""<!DOCTYPE html>
   </head>
 
   <body data-theme="dark">
-    <!-- Decorative backdrop -->
-    <div class="page-backdrop" aria-hidden="true">
-      <div class="page-backdrop__gradient"></div>
-      <div class="page-backdrop__orb page-backdrop__orb--one"></div>
-      <div class="page-backdrop__orb page-backdrop__orb--two"></div>
-      <div class="page-backdrop__grid"></div>
-    </div>
-
-    <!-- ================= -->
-    <!-- Header & Nav      -->
-    <!-- ================= -->
     <header class="site-header" id="top">
       <div class="container site-header__inner">
         <a class="site-logo logo" href="#overview">Long Horizon Hierarchy</a>
@@ -113,101 +101,22 @@ html = r"""<!DOCTYPE html>
               </a>
             </div>
 
-            <dl class="hero__meta">
-              <div class="hero__meta-item">
-                <dt>Authors</dt>
-                <dd>Puru Ojha · Narendhiran Vijayakumar</dd>
-              </div>
-              <div class="hero__meta-item">
-                <dt>Venue</dt>
-                <dd>Conference or workshop information goes here.</dd>
-              </div>
-            </dl>
+            <div class="hero__meta">
+              <p class="hero__authors"><strong>Authors:</strong> Puru Ojha · Narendhiran Vijayakumar</p>
+              <p class="hero__venue">Conference or workshop information goes here.</p>
+            </div>
           </div>
 
-          <!-- Rotating window stack -->
-          <div class="hero__column hero__column--windows">
-            <div class="window-stack" data-js-window-stack>
-              <article class="window-card" data-js-window data-window-title="System Teaser">
-                <header class="window-card__header">
-                  <div class="window-card__controls" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <p class="window-card__title">System Teaser</p>
-                </header>
-                <div class="window-card__body">
-                  <div class="window-card__media window-card__media--video video-frame">
-                    <iframe
-                      src="https://www.youtube.com/embed/videocode"
-                      title="Project teaser"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <p class="window-card__caption">Swap in a teaser or system overview video to introduce the project.</p>
-                </div>
-              </article>
-
-              <article class="window-card" data-js-window data-window-title="Architecture Sneak Peek">
-                <header class="window-card__header">
-                  <div class="window-card__controls" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <p class="window-card__title">Architecture Sneak Peek</p>
-                </header>
-                <div class="window-card__body">
-                  <div class="window-card__media">
-                    <img
-                      src="assets/architecture-placeholder.svg"
-                      alt="Placeholder diagram. Replace with your architecture graphic."
-                    />
-                  </div>
-                  <p class="window-card__caption">
-                    Showcase the hierarchical control stack, perception modules, and policy interfaces that power long-horizon
-                    execution.
-                  </p>
-                </div>
-              </article>
-
-              <article class="window-card" data-js-window data-window-title="Long-Horizon Gallery">
-                <header class="window-card__header">
-                  <div class="window-card__controls" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                  <p class="window-card__title">Long-Horizon Gallery</p>
-                </header>
-                <div class="window-card__body">
-                  <ul class="window-card__list">
-                    <li>Cabinet Store — Describe performance on deep rearrangement tasks with multiple drawers and doors.</li>
-                    <li>Drawer Store — Highlight dexterous placement in tight workspaces with varied object sets.</li>
-                    <li>Cook — Explain multi-stage kitchen manipulation that combines fetching, placing, and stirring.</li>
-                    <li>Replace — Emphasize reliability when restocking shelves or tidying cluttered scenes.</li>
-                  </ul>
-                  <p class="window-card__caption">Rotate through staged demonstrations that underline long-horizon execution.</p>
-                </div>
-              </article>
+          <div class="hero__media hero__visual">
+            <div class="video-frame video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/videocode"
+                title="Project teaser"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
             </div>
-
-            <div class="window-indicators" data-js-window-indicators>
-              <button type="button" class="window-indicator is-active" data-window-target="0" aria-pressed="true">
-                <span class="window-indicator__dot" aria-hidden="true"></span>
-                <span class="window-indicator__label">System Teaser</span>
-              </button>
-              <button type="button" class="window-indicator" data-window-target="1" aria-pressed="false">
-                <span class="window-indicator__dot" aria-hidden="true"></span>
-                <span class="window-indicator__label">Architecture</span>
-              </button>
-              <button type="button" class="window-indicator" data-window-target="2" aria-pressed="false">
-                <span class="window-indicator__dot" aria-hidden="true"></span>
-                <span class="window-indicator__label">Long-Horizon</span>
-              </button>
-            </div>
+            <p class="video-caption">Swap in a teaser or system overview video to introduce the project.</p>
           </div>
         </div>
       </section>
@@ -215,35 +124,20 @@ html = r"""<!DOCTYPE html>
       <!-- ============= -->
       <!-- Teaser section -->
       <!-- ============= -->
-      <section class="section video-showcase" id="teaser">
-        <div class="container video-showcase__layout">
-          <div class="section-heading">
-            <p class="section-eyebrow">Teaser</p>
-            <h2 class="section-title">Teaser Video</h2>
-            <p class="section-subtitle">
-              Highlight the zero-shot capabilities of the hierarchy. Replace the embed below with your long-horizon
-              demonstration reel.
-            </p>
-          </div>
-          <div class="video-showcase__frame window-card window-card--inline">
-            <header class="window-card__header">
-              <div class="window-card__controls" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <p class="window-card__title">Teaser Playback</p>
-            </header>
-            <div class="window-card__body">
-              <div class="video-frame">
-                <iframe
-                  src="https://www.youtube.com/embed/videocode"
-                  title="Teaser video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
+      <section class="teaser" id="teaser">
+        <div class="container">
+          <h2 class="section-title">Teaser Video</h2>
+          <p class="section-subtitle">
+            Highlight the zero-shot capabilities of the hierarchy. Replace the embed below with your long-horizon
+            demonstration reel.
+          </p>
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/videocode"
+              title="Teaser video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
           </div>
         </div>
       </section>
@@ -299,29 +193,19 @@ html = r"""<!DOCTYPE html>
       <!-- =================== -->
       <!-- Architecture section -->
       <!-- =================== -->
-      <section class="section architecture" id="architecture">
-        <div class="container architecture__layout">
-          <div class="architecture__media window-card window-card--inline">
-            <header class="window-card__header">
-              <div class="window-card__controls" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <p class="window-card__title">System Diagram</p>
-            </header>
-            <div class="window-card__body">
-              <img src="assets/architecture-placeholder.svg" alt="Placeholder diagram. Replace with your architecture graphic." />
-            </div>
-          </div>
+      <section id="architecture" class="architecture">
+        <div class="container">
+          <h2 class="section-title">Architecture</h2>
+          <p class="section-subtitle">
+            Showcase the hierarchical control stack, perception modules, and policy interfaces that power long-horizon
+            execution.
+          </p>
 
-          <div class="architecture__content">
-            <p class="section-eyebrow">Architecture</p>
-            <h2 class="section-title">Architecture</h2>
-            <p class="section-subtitle">
-              Showcase the hierarchical control stack, perception modules, and policy interfaces that power long-horizon
-              execution.
-            </p>
+          <div class="architecture__grid architecture__content">
+            <img
+              src="assets/architecture-placeholder.svg"
+              alt="Placeholder diagram. Replace with your architecture graphic."
+            />
             <div class="architecture__text">
               <h3>How It Works</h3>
               <p>
@@ -424,16 +308,19 @@ html = r"""<!DOCTYPE html>
               <p>Point to the arXiv or conference version of the paper.</p>
               <a class="button secondary" href="#" target="_blank" rel="noopener">Read the Paper</a>
             </article>
+
             <article class="resource-card">
               <h3>Code</h3>
               <p>Share the repository or release branch with scripts to reproduce experiments.</p>
               <a class="button secondary" href="#" target="_blank" rel="noopener">Browse Code</a>
             </article>
+
             <article class="resource-card">
               <h3>Dataset</h3>
               <p>Reference simulation assets, demonstrations, or generated trajectories.</p>
               <a class="button secondary" href="#" target="_blank" rel="noopener">Get Data</a>
             </article>
+
             <article class="resource-card">
               <h3>Media Kit</h3>
               <p>Provide downloadable figures, logos, or slide decks for talks and coverage.</p>
@@ -459,9 +346,6 @@ html = r"""<!DOCTYPE html>
       </section>
     </main>
 
-    <!-- ======= -->
-    <!-- Footer  -->
-    <!-- ======= -->
     <footer class="site-footer">
       <div class="container">
         <p>
@@ -474,8 +358,3 @@ html = r"""<!DOCTYPE html>
     </footer>
   </body>
 </html>
-"""
-path = "/mnt/data/index.html"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(html)
-path
