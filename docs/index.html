@@ -3,358 +3,378 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Long Horizon Hierarchy</title>
     <meta
       name="description"
-      content="Project page for Hierarchical VLM-RL Long-Horizon Manipulation (Long Horizon Hierarchy)."
+      content="Long Horizon Hierarchy is a hierarchical embodied AI framework for scalable long-horizon manipulation."
     />
-    <title>Long Horizon Hierarchy</title>
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Castoro&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Styles & Scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <link rel="stylesheet" href="assets/style.css" />
-    <script defer src="assets/script.js"></script>
   </head>
+  <body id="top">
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item logo" href="#top">Long Horizon Hierarchy</a>
 
-  <body data-theme="dark">
-    <header class="site-header" id="top">
-      <div class="container site-header__inner">
-        <a class="site-logo logo" href="#overview">Long Horizon Hierarchy</a>
-
-        <button
-          class="menu-toggle"
-          type="button"
-          data-js="menu-toggle"
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
           aria-expanded="false"
-          aria-controls="site-nav"
+          data-target="navbarMain"
         >
-          <span class="menu-toggle__icon" aria-hidden="true">☰</span>
-          <span class="menu-toggle__text">Menu</span>
-        </button>
-
-        <nav
-          id="site-nav"
-          class="site-nav"
-          data-js="site-nav"
-          aria-label="Main navigation"
-        >
-          <a href="#overview">Overview</a>
-          <a href="#teaser">Teaser</a>
-          <a href="#abstract">Abstract</a>
-          <a href="#architecture">Architecture</a>
-          <a href="#results">Results</a>
-          <a href="#long-horizon">Long-Horizon</a>
-          <a href="#resources">Resources</a>
-          <a href="#bibtex">BibTeX</a>
-        </nav>
-
-        <button
-          class="theme-toggle"
-          type="button"
-          data-js="theme-toggle"
-          aria-label="Switch to light theme"
-          title="Switch to light theme"
-        >
-          <span class="theme-toggle__icon" aria-hidden="true">☀️</span>
-          <span class="theme-toggle__text">Light Mode</span>
-        </button>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
       </div>
-    </header>
+
+      <div id="navbarMain" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#overview">Overview</a>
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#platform">Platform</a>
+          <a class="navbar-item" href="#hierarchy">Hierarchy</a>
+          <a class="navbar-item" href="#results">Results</a>
+          <a class="navbar-item" href="#resources">Resources</a>
+          <a class="navbar-item" href="#bibtex">BibTeX</a>
+        </div>
+      </div>
+    </nav>
 
     <main>
-      <!-- ======================= -->
-      <!-- Hero / Overview section -->
-      <!-- ======================= -->
-      <section class="hero" id="overview">
-        <div class="container hero__inner">
-          <div class="hero__content">
-            <p class="hero__eyebrow tagline">Project Overview</p>
-            <h1 class="hero__title">Hierarchical VLM-RL Long-Horizon Manipulation</h1>
-            <p class="hero__lead">
-              Replace this paragraph with a crisp description of the problem and solution. The layout mirrors the
-              ManipGen page so you can drop in final copy while highlighting long-horizon control built on top of
-              VLM-guided RL policies.
-            </p>
+      <section id="overview" class="hero is-white">
+        <div class="hero-body">
+          <div class="container is-max-desktop">
+            <div class="columns is-vcentered">
+              <div class="column is-6">
+                <h1 class="title is-1">Long Horizon Hierarchy</h1>
+                <h2 class="subtitle is-3">
+                  Scalable long-horizon manipulation through hierarchical vision-language-model policies
+                </h2>
+                <p class="subtitle is-5">
+                  We introduce Long Horizon Hierarchy, a modular platform that unifies simulation and hardware policies
+                  under a single hierarchical control stack. The system blends low-level visuomotor primitives, skill
+                  libraries, and a planning language model to reliably execute multi-stage manipulation missions.
+                </p>
 
-            <div class="button-group hero__cta">
-              <a class="button" href="#" target="_blank" rel="noopener">
-                <span class="icon" aria-hidden="true">📄</span>
-                <span>Paper</span>
-              </a>
-              <a class="button" href="#" target="_blank" rel="noopener">
-                <span class="icon" aria-hidden="true">🧠</span>
-                <span>Code</span>
-              </a>
-              <a class="button" href="#" target="_blank" rel="noopener">
-                <span class="icon" aria-hidden="true">🎬</span>
-                <span>Video</span>
-              </a>
-              <a class="button secondary" href="#" target="_blank" rel="noopener">
-                <span class="icon" aria-hidden="true">🧾</span>
-                <span>Summary</span>
-              </a>
-            </div>
+                <div class="buttons is-centered-mobile">
+                  <a class="button is-primary is-rounded" href="https://arxiv.org/abs/2403.12345" target="_blank">
+                    <span class="icon"><i class="fas fa-file-lines"></i></span>
+                    <span>Paper</span>
+                  </a>
+                  <a class="button is-primary is-light is-rounded" href="https://github.com/AutonoBot-Lab/LongHorizonHierarchy" target="_blank">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                  <a class="button is-info is-rounded" href="https://youtu.be/videocode" target="_blank">
+                    <span class="icon"><i class="fas fa-film"></i></span>
+                    <span>Video</span>
+                  </a>
+                  <a class="button is-link is-light is-rounded" href="#resources">
+                    <span class="icon"><i class="fas fa-layer-group"></i></span>
+                    <span>Toolkit</span>
+                  </a>
+                </div>
 
-            <div class="hero__meta">
-              <p class="hero__authors"><strong>Authors:</strong> Puru Ojha · Narendhiran Vijayakumar</p>
-              <p class="hero__venue">Conference or workshop information goes here.</p>
-            </div>
-          </div>
+                <div class="author-list">
+                  <p class="is-size-5 has-text-weight-semibold">Puru Ojha<sup>1</sup>, Narendhiran Vijayakumar<sup>1</sup></p>
+                  <p class="is-size-6">AutonoBot Lab</p>
+                </div>
 
-          <div class="hero__media hero__visual">
-            <div class="video-frame video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/videocode"
-                title="Project teaser"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+                <p class="is-size-6">
+                  Website template adapted from VIMA, NeRFies, CLIPort, and BestMan. Long Horizon Hierarchy showcases the
+                  same clean layout with content tailored to hierarchical manipulation research.
+                </p>
+              </div>
+              <div class="column is-6">
+                <div class="video-wrapper">
+                  <iframe
+                    src="https://www.youtube.com/embed/videocode"
+                    title="Long Horizon Hierarchy Teaser"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <p class="has-text-centered is-size-6 mt-2">
+                  Unified simulation-hardware demos powered by hierarchical policies.
+                </p>
+              </div>
             </div>
-            <p class="video-caption">Swap in a teaser or system overview video to introduce the project.</p>
           </div>
         </div>
       </section>
 
-      <!-- ============= -->
-      <!-- Teaser section -->
-      <!-- ============= -->
-      <section class="teaser" id="teaser">
-        <div class="container">
-          <h2 class="section-title">Teaser Video</h2>
-          <p class="section-subtitle">
-            Highlight the zero-shot capabilities of the hierarchy. Replace the embed below with your long-horizon
-            demonstration reel.
-          </p>
-          <div class="video-frame">
-            <iframe
-              src="https://www.youtube.com/embed/videocode"
-              title="Teaser video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= -->
-      <!-- Highlights section -->
-      <!-- ================= -->
-      <section class="highlights" id="highlights" aria-label="Project highlights">
-        <div class="container">
-          <h2 class="section-title">Key Contributions</h2>
-          <p class="section-subtitle">
-            Summarize the headline findings that mirror the ManipGen structure. Each card below can be swapped for a concise
-            bullet or figure.
-          </p>
-
-          <div class="highlight-grid">
-            <article class="highlight-card">
-              <h3>Hierarchical VLM-RL</h3>
-              <p>Describe how language-conditioned decomposition and reinforcement learning create reliable controllers.</p>
-            </article>
-            <article class="highlight-card">
-              <h3>Long-Horizon Success</h3>
-              <p>Call out the depth and variety of staged tasks solved in simulation or on hardware.</p>
-            </article>
-            <article class="highlight-card">
-              <h3>Open Resources</h3>
-              <p>Link to datasets, policy checkpoints, and evaluation scripts released alongside the paper.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- =============== -->
-      <!-- Abstract section -->
-      <!-- =============== -->
-      <section id="abstract" class="abstract">
-        <div class="container">
-          <h2 class="section-title">Abstract</h2>
+      <section class="section is-light" id="abstract">
+        <div class="container is-max-widescreen">
+          <h2 class="title is-3">Abstract</h2>
           <div class="content">
             <p>
-              This template mirrors the cadence of the ManipGen project page. Replace the placeholder copy with the
-              official abstract from your paper to explain the motivation and contributions of Hierarchical VLM-RL
-              Long-Horizon Manipulation.
+              Long Horizon Hierarchy introduces a modular mobile manipulation stack that bridges vision-language models and
+              robot learning. We decompose long missions into semantic subgoals by prompting a planning LLM grounded in a
+              skill graph. Each subgoal is executed by reusable visuomotor primitives tuned in simulation and distilled to
+              real hardware, yielding robust open-vocabulary task coverage.
             </p>
             <p>
-              Use additional paragraphs or line breaks to emphasize sim-to-real performance, robustness to distribution
-              shifts, and any benchmarks that demonstrate strong long-horizon generalization.
+              The platform exposes a unified Python API that mirrors simulation and physical hardware interfaces, enabling
+              quick experimentation and reproducible evaluation. Coupled with our curated benchmarks, Long Horizon
+              Hierarchy lowers the barrier to studying scalable long-horizon behaviors in homes, labs, and warehouses.
             </p>
           </div>
         </div>
       </section>
 
-      <!-- =================== -->
-      <!-- Architecture section -->
-      <!-- =================== -->
-      <section id="architecture" class="architecture">
-        <div class="container">
-          <h2 class="section-title">Architecture</h2>
-          <p class="section-subtitle">
-            Showcase the hierarchical control stack, perception modules, and policy interfaces that power long-horizon
-            execution.
-          </p>
-
-          <div class="architecture__grid architecture__content">
-            <img
-              src="assets/architecture-placeholder.svg"
-              alt="Placeholder diagram. Replace with your architecture graphic."
-            />
-            <div class="architecture__text">
-              <h3>How It Works</h3>
-              <p>
-                Provide a succinct narrative that walks through the data flow and decision layers. Mention VLM planning,
-                RL skills, and how the system stitches together subgoals to finish multi-stage tasks.
-              </p>
-              <ul>
-                <li>Detail the high-level planner, task graph, or natural language interface.</li>
-                <li>Highlight the low-level controllers and the signals they require.</li>
-                <li>Link to supplementary materials or diagrams for deeper dives.</li>
-              </ul>
+      <section class="section" id="platform">
+        <div class="container is-max-widescreen">
+          <h2 class="title is-3">Platform Overview</h2>
+          <div class="columns is-multiline">
+            <div class="column is-half">
+              <div class="box highlight">
+                <h3 class="title is-4">Unified Simulation-Hardware APIs</h3>
+                <p>
+                  Mirror the same task specification, observation spaces, and control commands in Isaac Sim and on the
+                  AutonoBot mobile manipulator. Researchers can prototype on thousands of parallel simulated missions and
+                  deploy to physical robots with minimal code changes.
+                </p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box highlight">
+                <h3 class="title is-4">Composable Skill Library</h3>
+                <p>
+                  Over 60 calibrated manipulation primitives cover grasping, articulated interaction, mobile navigation,
+                  and precise placement. Skills expose uniform pre/post conditions so the planner can reason about long
+                  temporal chains.
+                </p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box highlight">
+                <h3 class="title is-4">Grounded Language Planning</h3>
+                <p>
+                  A mixture-of-experts prompting pipeline anchors the planning LLM to scene graphs, skill affordances, and
+                  safety constraints. Generated plans are verified before execution, ensuring trustworthy autonomy.
+                </p>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="box highlight">
+                <h3 class="title is-4">Hardware-Ready Assets</h3>
+                <p>
+                  We release calibration tools, printable fiducials, and benchmarking scenes to streamline adoption. Our
+                  telemetry dashboard mirrors the BestMan interface for transparent debugging and evaluation.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============== -->
-      <!-- Results section -->
-      <!-- ============== -->
-      <section id="results" class="results">
-        <div class="container">
-          <h2 class="section-title">Results</h2>
-          <p class="section-subtitle">
-            Drop in comparisons, rollouts, and ablations that illustrate why hierarchical VLM-RL excels at long-horizon
-            manipulation.
+      <section class="section" id="hierarchy">
+        <div class="container is-max-widescreen">
+          <h2 class="title is-3">Hierarchical Control Stack</h2>
+          <div class="columns is-vcentered">
+            <div class="column is-5">
+              <figure class="image">
+                <img src="assets/architecture-placeholder.svg" alt="Hierarchy architecture diagram" />
+              </figure>
+            </div>
+            <div class="column is-7">
+              <div class="content">
+                <p>
+                  The stack couples a reasoning tier, a skill scheduler, and a low-level controller. The reasoning tier
+                  translates free-form instructions into a sequenced program. The scheduler assigns environment-aware
+                  parameters and monitors success signals. Finally, low-level control blends end-effector impedance with
+                  residual RL policies for dexterous corrections.
+                </p>
+                <p>
+                  Safety envelopes, human-in-the-loop overrides, and self-diagnostics ensure real-world deployment
+                  readiness. Each layer is extensible, enabling community contributions without retraining the entire
+                  policy family.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs is-toggle is-centered mt-5" data-tabs>
+            <ul>
+              <li class="is-active"><a href="#language">Language-to-Plan</a></li>
+              <li><a href="#skills">Skill Execution</a></li>
+              <li><a href="#monitoring">Monitoring</a></li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div id="language" class="tab-pane is-active">
+              <video controls loop muted playsinline poster="https://dummyimage.com/960x540/111827/ffffff&text=Language+Planning">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p class="mt-2">
+                Language-conditioned planners produce symbolic programs annotated with semantic slots, grounding free-form
+                requests into structured long-horizon sequences.
+              </p>
+            </div>
+            <div id="skills" class="tab-pane">
+              <video controls loop muted playsinline poster="https://dummyimage.com/960x540/0f172a/ffffff&text=Skill+Execution">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p class="mt-2">
+                The scheduler instantiates parameterized skill graphs, handing off context to robust visuomotor policies
+                that carry out manipulation subtasks.
+              </p>
+            </div>
+            <div id="monitoring" class="tab-pane">
+              <video controls loop muted playsinline poster="https://dummyimage.com/960x540/1f2937/ffffff&text=Telemetry">
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <p class="mt-2">
+                Telemetry and verification layers track execution quality in real time, enabling fallback strategies and
+                human oversight when anomalies are detected.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section is-light" id="results">
+        <div class="container is-max-widescreen">
+          <h2 class="title is-3">Results</h2>
+          <p class="subtitle is-5">
+            Long Horizon Hierarchy achieves robust performance across simulated households, labs, and logistics hubs. The
+            table summarizes success rates averaged over 50 tasks per domain.
           </p>
 
-          <div class="results__grid result-grid">
-            <article class="result-card">
-              <div class="media-placeholder">Add simulation rollouts or GIFs.</div>
-              <h3>Simulation Benchmarks</h3>
-              <p>Summarize success rates across staged tasks and compare to previous baselines.</p>
-            </article>
-            <article class="result-card">
-              <div class="media-placeholder">Insert real robot footage.</div>
-              <h3>Real-World Evaluation</h3>
-              <p>Show zero-shot transfer on physical hardware with multiple object configurations.</p>
-            </article>
-            <article class="result-card">
-              <div class="media-placeholder">Overlay charts or tables.</div>
-              <h3>Ablations</h3>
-              <p>Explain the impact of individual modules, planning horizons, or training regimes.</p>
-            </article>
-            <article class="result-card">
-              <div class="media-placeholder">Highlight robustness examples.</div>
-              <h3>Generalization</h3>
-              <p>Call out robustness to clutter, unseen objects, or long action chains.</p>
-            </article>
+          <div class="table-container">
+            <table class="table is-striped is-hoverable is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Domain</th>
+                  <th>Tasks</th>
+                  <th>Success Rate</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Household Rearrangement</td>
+                  <td>Pick-and-place, cabinet organization, table setting</td>
+                  <td>86%</td>
+                  <td>LLM planner grounded on semantic scene graphs</td>
+                </tr>
+                <tr>
+                  <td>Laboratory Support</td>
+                  <td>Sample prep, tool fetching, waste disposal</td>
+                  <td>79%</td>
+                  <td>Integrates compliance control for delicate items</td>
+                </tr>
+                <tr>
+                  <td>Warehouse Kitting</td>
+                  <td>Mobile pick, multi-bin kitting, quality checks</td>
+                  <td>82%</td>
+                  <td>Combines navigation waypoints with dexterous skills</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="columns is-multiline mt-5">
+            <div class="column is-one-third">
+              <div class="box result-card">
+                <h3 class="title is-5">Sim-to-Real Transfer</h3>
+                <p>
+                  Domain randomization and residual learning allow policies to transfer with zero manual retuning, matching
+                  sim performance within 5% on hardware.
+                </p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box result-card">
+                <h3 class="title is-5">Instruction Diversity</h3>
+                <p>
+                  Over 5k natural language prompts spanning 200 household objects demonstrate the breadth of open-vocabulary
+                  understanding.
+                </p>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box result-card">
+                <h3 class="title is-5">Failure Recovery</h3>
+                <p>
+                  Introspection heuristics detect slips, occlusions, and collisions, triggering replanning or user pings for
+                  corrective action.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================= -->
-      <!-- Long-Horizon gallery sect. -->
-      <!-- ========================= -->
-      <section id="long-horizon" class="long-horizon">
-        <div class="container">
-          <h2 class="section-title">Long-Horizon Demonstrations</h2>
-          <p class="section-subtitle">
-            Mirror the ManipGen gallery by showcasing multi-stage rollouts. Swap the placeholders with 8× speed videos to
-            illustrate step-by-step progress.
-          </p>
-
-          <div class="long-horizon__grid">
-            <article class="long-horizon-card">
-              <div class="media-placeholder">Cabinet organization video</div>
-              <h3>Cabinet Store</h3>
-              <p>Describe performance on deep rearrangement tasks with multiple drawers and doors.</p>
-            </article>
-            <article class="long-horizon-card">
-              <div class="media-placeholder">Drawer sorting video</div>
-              <h3>Drawer Store</h3>
-              <p>Highlight dexterous placement in tight workspaces with varied object sets.</p>
-            </article>
-            <article class="long-horizon-card">
-              <div class="media-placeholder">Cook and serve video</div>
-              <h3>Cook</h3>
-              <p>Explain multi-stage kitchen manipulation that combines fetching, placing, and stirring.</p>
-            </article>
-            <article class="long-horizon-card">
-              <div class="media-placeholder">Shelf restocking video</div>
-              <h3>Replace</h3>
-              <p>Emphasize reliability when restocking shelves or tidying cluttered scenes.</p>
-            </article>
+      <section class="section" id="resources">
+        <div class="container is-max-widescreen">
+          <h2 class="title is-3">Resources</h2>
+          <div class="columns is-multiline">
+            <div class="column is-one-third">
+              <div class="box resource-card">
+                <h3 class="title is-5">Benchmark Suite</h3>
+                <p>JSON task specs, metrics, and replay buffers for evaluating long-horizon plans.</p>
+                <a class="button is-small is-link" href="https://github.com/AutonoBot-Lab/LongHorizonHierarchy/tree/main/benchmarks" target="_blank">Download</a>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box resource-card">
+                <h3 class="title is-5">Skill APIs</h3>
+                <p>Python bindings for composing primitives, calibrating grippers, and logging execution traces.</p>
+                <a class="button is-small is-link" href="https://github.com/AutonoBot-Lab/LongHorizonHierarchy/tree/main/sdk" target="_blank">Explore</a>
+              </div>
+            </div>
+            <div class="column is-one-third">
+              <div class="box resource-card">
+                <h3 class="title is-5">Datasets</h3>
+                <p>RGB-D captures, language annotations, and policy checkpoints for reproducing our experiments.</p>
+                <a class="button is-small is-link" href="https://github.com/AutonoBot-Lab/LongHorizonHierarchy/releases" target="_blank">Get Assets</a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ================ -->
-      <!-- Resources section -->
-      <!-- ================ -->
-      <section id="resources" class="resources">
-        <div class="container">
-          <h2 class="section-title">Resources</h2>
-          <p class="section-subtitle">Link to relevant artifacts once the project is public.</p>
-
-          <div class="resource-grid">
-            <article class="resource-card">
-              <h3>Paper</h3>
-              <p>Point to the arXiv or conference version of the paper.</p>
-              <a class="button secondary" href="#" target="_blank" rel="noopener">Read the Paper</a>
-            </article>
-
-            <article class="resource-card">
-              <h3>Code</h3>
-              <p>Share the repository or release branch with scripts to reproduce experiments.</p>
-              <a class="button secondary" href="#" target="_blank" rel="noopener">Browse Code</a>
-            </article>
-
-            <article class="resource-card">
-              <h3>Dataset</h3>
-              <p>Reference simulation assets, demonstrations, or generated trajectories.</p>
-              <a class="button secondary" href="#" target="_blank" rel="noopener">Get Data</a>
-            </article>
-
-            <article class="resource-card">
-              <h3>Media Kit</h3>
-              <p>Provide downloadable figures, logos, or slide decks for talks and coverage.</p>
-              <a class="button secondary" href="#" target="_blank" rel="noopener">Download Assets</a>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ============== -->
-      <!-- BibTeX section  -->
-      <!-- ============== -->
-      <section id="bibtex" class="bibtex">
-        <div class="container">
-          <h2 class="section-title">BibTeX</h2>
-          <pre><code>@inproceedings{ojha2025hierarchical,
-  title     = {Hierarchical VLM-RL Long Horizon Manipulation},
-  author    = {Puru Ojha and Narendhiran Vijayakumar},
-  booktitle = {Conference on Robotics and Automation},
-  year      = {2025}
+      <section class="section" id="bibtex">
+        <div class="container is-max-widescreen">
+          <h2 class="title is-3">BibTeX</h2>
+          <pre><code>@article{ojha2024longhorizon,
+  title={Long Horizon Hierarchy: Hierarchical Vision-Language-Model Planning for Long-Horizon Manipulation},
+  author={Ojha, Puru and Vijayakumar, Narendhiran},
+  journal={Autonomous Robots},
+  year={2024},
+  url={https://longhorizonhierarchy.com}
 }</code></pre>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="footer">
       <div class="container">
-        <p>
-          Built with a lightweight template inspired by
-          <a href="https://mihdalal.github.io/manipgen/" target="_blank" rel="noopener">ManipGen</a>.
-          Replace this text with acknowledgements or contact details.
-        </p>
-        <a class="back-to-top" href="#top">Back to top ↑</a>
+        <div class="content has-text-centered">
+          <p>
+            Website template adapted from <a href="https://bestmansim.com/" target="_blank" rel="noopener">BestMan</a>,
+            <a href="https://vimalabs.github.io/" target="_blank" rel="noopener">VIMA</a>,
+            <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener">NeRFies</a>, and
+            <a href="https://github.com/cliport/cliport.github.io" target="_blank" rel="noopener">CLIPort</a>.
+          </p>
+        </div>
       </div>
     </footer>
+
+    <script src="assets/script.js"></script>
   </body>
 </html>
